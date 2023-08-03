@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">Product Recommendations:</h1>
+        <ul class="center">
+            {% for product in recommendations %}
+            <li>
+                <h3>Product Name: {{ product['Product Name'] }}</h3>
+                <p>Category: {{ product['Category'] }}</p>
+                <p>Product ID: {{ product['Product ID'] }}</p>
+                <p>Tags: {{ product['Product Tags'] }}</p>
+                <img src="{{ product['Product Image Link'] }}" alt="{{ product['Product Name'] }}" class="product-image">
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
